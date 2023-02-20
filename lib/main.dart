@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,12 +14,33 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
-        body: Row(
-          children: [
-            Flexible(child: Container(color: Colors.blue,), flex: 3,), // weight와 비슷
-            Flexible(child: Container(color: Colors.green,), flex: 7,), // 비율
-            Expanded(child: Container(color: Colors.red,)) // 꽉 채우는거
-          ],
+        body: Container(
+          height: 150,
+          padding: EdgeInsets.all(10),
+          child: Row(
+            children: [
+              Image.asset("assets/images/pepe.png", width: 150,),
+              Container(
+                width: 300,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("카메라 팝니다", style: TextStyle(),),
+                    Text("금호동 3가"),
+                    Text("7000원"),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Icon(Icons.favorite),
+                        Text("4")
+                      ],
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
+
         ),
       ),
     );
