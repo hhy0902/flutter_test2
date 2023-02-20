@@ -6,6 +6,10 @@ void main() {
   runApp(const MyApp());
 }
 
+var a = SizedBox(
+  child: Text("안녕"),
+);
+
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
@@ -14,39 +18,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(),
-        body: Container(
-          height: 150,
-          padding: EdgeInsets.all(10),
-          child: Row(
-            children: [
-              Image.asset("assets/images/pepe.png", width: 150,),
-              Container(
-                width: 300,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("카메라 팝니다", style: TextStyle(),),
-                    Text("금호동 3가"),
-                    Text("7000원"),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Icon(Icons.favorite),
-                        Text("4")
-                      ],
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+        body: ListView(
 
-        ),
-      ),
+        )
+      )
     );
   }
 }
 
+class ShopItem extends StatelessWidget {
+  const ShopItem({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: Text("안녕"),
+    );
+  }
+}
 
 
 
